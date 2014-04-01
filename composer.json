@@ -6,7 +6,9 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 		"way/generators": "2.*",
-		"boyhagemann/form": "dev-master"
+		"boyhagemann/form": "dev-master",
+		"cviebrock/eloquent-sluggable": "1.0.*",
+		"teepluss/api": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

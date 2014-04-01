@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateResourcesTable extends Migration {
+class CreateActionsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,16 @@ class CreateResourcesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('resources', function(Blueprint $table) {
+		Schema::create('actions', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
-			$table->integer('account_id');
 			$table->string('title');
 			$table->string('slug');
-			$table->string('uri');
+			$table->string('path');
+			$table->string('method');
+			$table->integer('resource_id');
 
-			$table->unique(array('account_id', 'uri'));
+			$table->unique(array('path', 'resource_id'));
 		});
 	}
 
@@ -32,7 +33,7 @@ class CreateResourcesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('resources');
+		Schema::drop('actions');
 	}
 
 }

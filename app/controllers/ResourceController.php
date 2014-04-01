@@ -17,10 +17,12 @@ class ResourceController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create(Account $account)
+	public function create()
 	{
+		$account = Auth::user()->account;
+
 		$fb = App::make('formbuilder');
-		$fb->route('{account}.resource.store', array($account->name));
+		$fb->route('resource.store', array($account->name));
 		$fb->text('title')->label('Title');
 		$fb->text('uri')->label('Url');
 		return $fb->build();

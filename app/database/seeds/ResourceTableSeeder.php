@@ -7,7 +7,8 @@ class ResourceTableSeeder extends Seeder {
 		Resource::create(array(
 			'id' => 1,
 			'account_id' => 1,
-			'title' => 'Test resource',
+			'title' => 'Resource',
+			'uri' => '/resource'
 		));
 	}
 

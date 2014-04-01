@@ -108,6 +108,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Boyhagemann\Form\FormServiceProvider',
+		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+		'Teepluss\Api\ApiServiceProvider',
 
 	),
 
@@ -174,6 +176,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
+		'Sluggable' 	  => 'Cviebrock\EloquentSluggable\Facades\Sluggable',
+		'API'			  => 'Teepluss\Api\Facades\API',
 
 	),
 

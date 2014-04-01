@@ -13,12 +13,23 @@
 |
 */
 
+Auth::attempt(array('email' => 'test@test.nl', 'password' => 'test'));
+
+Route::bind('resource', function($slug) {
+	$account = Auth::user()->account;
+	return Resource::where('account_id', $account->id)->whereSlug($slug)->firstOrFail();
+});
+Route::bind('action', function($slug) {
+	$account = Auth::user()->account;
+	return Action::whereSlug($slug)->firstOrFail();
+});
+
 Route::get('/', function()
 {
 	return View::make('hello');
 });
 
 Route::resource('resource', 'ResourceController');
+Route::get('manage/{resource}/{action}', 'ManageController@manage');
 
 
-Auth::attempt(array('email' => 'test@test.nl', 'password' => 'test'));
