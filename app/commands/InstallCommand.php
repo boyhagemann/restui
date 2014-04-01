@@ -37,7 +37,7 @@ class InstallCommand extends Command {
 	 */
 	public function fire()
 	{
-		DB::table('migrations')
+		Schema::hasTable('migrations')
 			? $this->call('migrate:refresh')
 			: $this->call('migrate:install');
 

@@ -17,3 +17,8 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::resource('resource', 'ResourceController');
+
+
+Auth::attempt(array('email' => 'test@test.nl', 'password' => 'test'));

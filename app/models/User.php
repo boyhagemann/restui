@@ -3,6 +3,11 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
+/**
+ * Class User
+ *
+ * @property Account $account
+ */
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	/**
@@ -18,6 +23,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 * @var array
 	 */
 	protected $hidden = array('password');
+
+	protected $with = array('account', 'account.resources');
 
 	/**
 	 * Get the unique identifier for the user.
@@ -47,6 +54,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function getReminderEmail()
 	{
 		return $this->email;
+	}
+
+	/**
+	 * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+	 */
+	public function account()
+	{
+		return $this->belongsTo('Account');
 	}
 
 }
