@@ -7,7 +7,7 @@ class ManageController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function manage(Resource $resource, Action $action)
+	public function manage(Action $action)
 	{
 		return API::invoke($action->uri, $action->method);
 	}
