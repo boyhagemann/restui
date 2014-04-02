@@ -8,7 +8,7 @@ class ResourceTableSeeder extends Seeder {
 			'id' => 1,
 			'account_id' => 1,
 			'title' => 'Resource',
-			'uri' => '/resource'
+			'uri' => 'http://localhost/restui/public/resource'
 		));
 	}
 

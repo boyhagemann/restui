@@ -17,7 +17,6 @@ class CreateResourcesTable extends Migration {
 			$table->timestamps();
 			$table->integer('account_id');
 			$table->string('title');
-			$table->string('slug');
 			$table->string('uri');
 
 			$table->unique(array('account_id', 'uri'));

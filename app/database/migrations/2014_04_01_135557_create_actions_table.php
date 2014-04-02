@@ -16,9 +16,12 @@ class CreateActionsTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->string('title');
-			$table->string('slug');
 			$table->string('path');
 			$table->string('method');
+			$table->string('content_type');
+			$table->string('config_path');
+			$table->string('config_method');
+			$table->string('config_content_type');
 			$table->integer('resource_id');
 
 			$table->unique(array('path', 'resource_id'));
