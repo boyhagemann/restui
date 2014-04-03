@@ -18,8 +18,13 @@ class CreateResourcesTable extends Migration {
 			$table->integer('account_id');
 			$table->string('title');
 			$table->string('uri');
+			$table->string('method');
+			$table->string('content_type');
+			$table->string('config_path');
+			$table->string('config_method');
+			$table->string('config_content_type');
 
-			$table->unique(array('account_id', 'uri'));
+			$table->unique(array('account_id', 'uri', 'method', 'content_type'));
 		});
 	}
 

@@ -10,7 +10,9 @@
 The `restui:install` command seeds the resources and actions table with it's own resource and actions.
 This way we can call our own routes as if they were remote api calls.
 
-Try calling `/manage/1` of `/manage/2` from the browser.
-These are the remote api calls.
-They are the same as `/resource` and `/resource/create`, which are they original routes.
+Try calling `/dispatch/1` in your browser in the application.
+The following flow is called:
+* The route points to a PageController with the right Page model.
+* The Page model has Nodes which holds information about the Widget, Resources an JSON config.
+* Each remote View resource is dispatched with params from the Node
 

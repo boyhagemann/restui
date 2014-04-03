@@ -8,7 +8,8 @@
 		"way/generators": "2.*",
 		"boyhagemann/form": "dev-master",
 		"cviebrock/eloquent-sluggable": "1.0.*",
-		"teepluss/api": "dev-master"
+		"teepluss/api": "dev-master",
+		"baum/baum": "~1.0"
 	},
 	"autoload": {
 		"classmap": [

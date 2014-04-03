@@ -110,6 +110,7 @@ return array(
 		'Boyhagemann\Form\FormServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 		'Teepluss\Api\ApiServiceProvider',
+		'Baum\BaumServiceProvider',
 
 	),
 

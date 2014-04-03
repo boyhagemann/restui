@@ -14,6 +14,16 @@
 */
 
 
+Route::post('viewresource/testview', function() {
+	return View::make('testview', Input::all());
+});
+Route::options('viewresource/testview', function() {
+	return array(
+		'vars' => array('content', 'sidebar')
+	);
+});
+
+
 try {
 
 	Auth::attempt(array('email' => 'test@test.nl', 'password' => 'test'));
@@ -30,8 +40,24 @@ try {
 		return $action;
 	});
 
+	Route::bind('page', function($id) {
+
+		$account = Auth::user()->account;
+		$page = Page::findOrFail($id);
+
+		if(!$page->account_id = $account->id) {
+			throw new NotFoundException;
+		}
+
+		return $page;
+	});
+
 	Route::resource('resource', 'ResourceController');
-	Route::get('manage/{action}', 'ManageController@manage');
+
+	Route::get('content/{content}', 'ContentController@manage');
+
+
+	Route::get('dispatch/{page}', 'PageController@dispatch');
 
 }
 catch(Illuminate\Database\QueryException $e) {
