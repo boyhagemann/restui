@@ -15,6 +15,8 @@ class Node extends BaseNode {
    */
   protected $table = 'nodes';
 
+	protected $hidden = array('id', 'parent_id', 'lft', 'rgt', 'depth', 'account_id', 'page_id', 'widget_id');
+
 	public function widget()
 	{
 		return $this->belongsTo('Widget');

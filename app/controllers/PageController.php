@@ -4,6 +4,10 @@ class PageController extends \BaseController {
 
 	public function dispatch(Page $page)
 	{
+		$page->load(array('content', 'content.widget', 'content.widget.dataResource', 'content.widget.viewResource'));
+
+//		dd($page->toArray());
+
 		foreach($page->content as $node) {
 
 			$dataResource = $node->widget->dataResource;

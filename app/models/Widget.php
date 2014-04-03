@@ -9,6 +9,7 @@
 class Widget extends \Eloquent {
 	protected $fillable = array();
 
+	protected $hidden = array('id', 'account_id', 'page_id', 'widget_id');
 	/**
 	 * @return Illuminate\Database\Eloquent\Relations\BelongsTo
 	 */
